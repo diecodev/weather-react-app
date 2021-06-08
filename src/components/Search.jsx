@@ -92,7 +92,7 @@ const Search = () => {
                     </div>
                     : <div className="city-searched">
                         <div className="city-container">
-                            <p className="date">{info.message}</p>
+                            <p className="date">{info.message}XD</p>
                         </div>
                     </div>}
             </main>
