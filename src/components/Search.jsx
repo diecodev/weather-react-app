@@ -18,13 +18,12 @@ const Search = () => {
             .then(res => res.json())
             .then(data => setInfo({
                 name: `${data.name}`,
-                // country: `${data.sys.country}`,
+                country: `${data.sys.country}`,
                 temperature: `${Math.floor(data.main.temp)}`,
                 description: `${data.weather[0].description}`
             }))
-            .catch(err => setInfo({ message: err }))
+            .catch(err => setInfo({ message: "couldn't find this city." }))
     }
-
     const getData = (e) => {
         if (e.key === "Enter" && document.getElementById("search").value) {
             fetchAPI()
@@ -82,7 +81,7 @@ const Search = () => {
                     ? <div className="city-searched">
                         <div className="city-container">
                             <div className="location">
-                                <div className="city-name">{`${info.name}`}</div>
+                                <div className="city-name">{`${info.name}, ${info.country}`}</div>
                             </div>
                             <div className="date">{dates}</div>
                             <div className="temperture-card">{info.temperature}ºC</div>
@@ -92,7 +91,7 @@ const Search = () => {
                     </div>
                     : <div className="city-searched">
                         <div className="city-container">
-                            <p className="date">{info.message}XD</p>
+                            <p className="date">{info.message}</p>
                         </div>
                     </div>}
             </main>
