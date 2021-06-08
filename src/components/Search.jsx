@@ -22,7 +22,7 @@ const Search = () => {
                 temperature: `${Math.floor(data.main.temp)}`,
                 description: `${data.weather[0].description}`
             }))
-            .catch(err => setInfo({ message: "couldn't find this city." }))
+            .catch(err => setInfo({ message: `${err}` }))
     }
 
     const getData = (e) => {
