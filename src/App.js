@@ -1,12 +1,9 @@
-import "./styles/app.scss";
-import NavBar from "./components/NavBar";
-import Stories from "./components/Stories";
+import Search from "./components/Search";
 
 function App() {
   return (
     <div>
-      <NavBar />
-      <Stories />
+      <Search />
     </div>
   );
 }
